@@ -47,8 +47,8 @@ fi
 cat > /etc/wireguard/$WIREGUARD_IFNAME.conf <<EOF
 [Interface]
 Address = $WIREGUARD_NET_PREFIX.1/24
-PostUp = /etc/wireguard/post_up.sh eth0 $1 $WIREGUARD_NET_PREFIX.0/24 $WIREGUARD_PORT "$(($WIREGUARD_PORT+1)):$(($WIREGUARD_PORT+999))"
-PostDown = /etc/wireguard/post_down.sh eth0 $1 $WIREGUARD_NET_PREFIX.0/24 $WIREGUARD_PORT "$(($WIREGUARD_PORT+1)):$(($WIREGUARD_PORT+999))"
+PostUp = /etc/wireguard/post_up.sh eth0 $WIREGUARD_IFNAME $WIREGUARD_NET_PREFIX.0/24 $WIREGUARD_PORT "$(($WIREGUARD_PORT+1)):$(($WIREGUARD_PORT+999))"
+PostDown = /etc/wireguard/post_down.sh eth0 $WIREGUARD_IFNAME $WIREGUARD_NET_PREFIX.0/24 $WIREGUARD_PORT "$(($WIREGUARD_PORT+1)):$(($WIREGUARD_PORT+999))"
 ListenPort = $WIREGUARD_PORT
 PrivateKey = $WIREGUARD_PRIKEY
 MTU=1280
