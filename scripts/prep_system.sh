@@ -1,5 +1,5 @@
 #!/bin/bash
-PRIMARY_IP=echo $(ip addr show $(ip route | awk '/default/ { print $5 }') | grep "inet" | head -n 1 | awk '/inet/ {print $2}' | cut -d'/' -f1)
+PRIMARY_IP=$(ip addr show $(ip route | awk '/default/ { print $5 }') | grep "inet" | head -n 1 | awk '/inet/ {print $2}' | cut -d'/' -f1)
 
 #update system
 apt-get -y update

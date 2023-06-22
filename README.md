@@ -1,4 +1,4 @@
 # ubuntu-server-script
 
 apt-get install curl
-curl -o prep_system.sh $URL_PREFIX/raw/main/init/linode_wireguard.sh
+curl -o linode_wireguard.sh https://raw.githubusercontent.com/wuchang1123/ubuntu-server-script/main/init/linode_wireguard.sh
