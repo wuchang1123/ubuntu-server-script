@@ -23,7 +23,7 @@ sed -i 's/PermitRootLogin yes/PermitRootLogin no/' /etc/ssh/sshd_config
 else
 sed -i 's/PermitRootLogin yes/PermitRootLogin without-password/' /etc/ssh/sshd_config
 fi
-if [ ! z "$USER_SSHKEY" ]
+if [ ! -z "$USER_SSHKEY" ]
 then
 sed -i 's/#PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config #disable ssh password auth if $USER_SSHKEY is not empty
 fi
